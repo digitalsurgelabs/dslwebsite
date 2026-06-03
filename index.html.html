@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<!--
+  Digital Surge Labs — Contrast Safety & Premium Readability Fix v4
+  Key fixes applied:
+  - Removed white-on-white risk from light cards/forms inside dark sections.
+  - Added scoped contrast safety rules for form cards, comparison tables, matrices, light calculators, and light content cards.
+  - Restored dark text and light inputs on all light surfaces, even when nested inside dark sections.
+  - Preserved high-contrast white text only inside true dark surfaces: heroes, consoles, dark cards, dark bubbles, and footer.
+  - Kept all existing JavaScript behavior intact: routing, calculators, tabs, forms, exit popup, and interactions.
+  - Maintained elite premium spacing, card radius, orange accent bars, console polish, and CTA styling.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Surge Labs | Digital Leak Audits & Conversion Systems</title>
+  <meta name="description" content="Digital Surge Labs helps US-based service businesses find and fix digital leaks in websites, lead flow, response systems, e-commerce journeys, and growth systems." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Digital Surge Labs",
+        "url": "https://digitalsurgelabs.com",
+        "email": "hello@digitalsurgelabs.com",
+        "address": {"@type":"PostalAddress","addressLocality":"San Francisco","addressRegion":"CA","addressCountry":"US"},
+        "areaServed": "United States",
+        "description": "Digital Leak Audits, conversion websites, growth systems, AI communication, and commerce optimization for US-based businesses."
+      },
+      {"@type":"WebSite","name":"Digital Surge Labs","url":"https://digitalsurgelabs.com"},
+      {"@type":"Service","name":"Digital Leak Audit","provider":{"@type":"Organization","name":"Digital Surge Labs"},"areaServed":"United States","serviceType":"Digital Growth Audit"},
+      {"@type":"Service","name":"Web Creation","provider":{"@type":"Organization","name":"Digital Surge Labs"},"areaServed":"United States","serviceType":"Conversion-Focused Website Creation"},
+      {"@type":"Service","name":"Growth Systems","provider":{"@type":"Organization","name":"Digital Surge Labs"},"areaServed":"United States","serviceType":"Lead Generation and Conversion Systems"},
+      {"@type":"Service","name":"S.A.R.A AI Communication","provider":{"@type":"Organization","name":"Digital Surge Labs"},"areaServed":"United States","serviceType":"AI Voice and Communication Systems"},
+      {"@type":"Service","name":"Digital Commerce","provider":{"@type":"Organization","name":"Digital Surge Labs"},"areaServed":"United States","serviceType":"E-Commerce Optimization"},
+      {"@type":"ContactPage","name":"Contact Digital Surge Labs","url":"https://digitalsurgelabs.com/#contact"}
+    ]
+  }
+  </script>
+  <style>
+    :root{
+      --black:#050505;--black-2:#0f0f0f;--charcoal:#15110f;--white:#fff;--paper:#fbfaf7;--warm:#f7f5f0;--orange:#f04a00;--orange-dark:#c93a00;--orange-soft:rgba(240,74,0,.12);--text:#0b0b0b;--muted:#686868;--muted-dark:#bdb6ae;--border:#e7e2da;--border-dark:rgba(255,255,255,.13);--shadow:0 24px 80px rgba(0,0,0,.12);--shadow-hover:0 34px 90px rgba(240,74,0,.16),0 16px 42px rgba(0,0,0,.12);--radius:28px;--radius-md:22px;--radius-sm:14px;--container:1180px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth;-webkit-text-size-adjust:100%} body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:var(--paper);line-height:1.6;overflow-x:hidden} body.menu-open,body.popup-open{overflow:hidden} a{color:inherit;text-decoration:none} img{display:block;max-width:100%} button,input,select,textarea{font:inherit} button{cursor:pointer}
+    .container{width:min(var(--container),calc(100% - 40px));margin:0 auto}.page{display:none}.page.active{display:block}.section{padding:108px 0;position:relative;overflow:hidden}.section-tight{padding:78px 0}.dark{background:var(--black);color:var(--white)}.warm{background:var(--warm)}.paper{background:var(--paper)}.textured:before,.dark:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 14% 20%,rgba(240,74,0,.08),transparent 24%),radial-gradient(circle at 86% 76%,rgba(240,74,0,.055),transparent 30%)}.section>.container{position:relative;z-index:1}.grid{display:grid;gap:24px}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}.split{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}.split-wide{display:grid;grid-template-columns:1.15fr .85fr;gap:62px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:900;letter-spacing:.17em;text-transform:uppercase;color:var(--orange);margin:0 0 16px}.eyebrow:before{content:"→";opacity:.78;transition:transform .22s ease}.section-head:hover .eyebrow:before{transform:translateX(4px)} h1,h2,h3,p{margin-top:0} h1{font-size:clamp(42px,5.8vw,78px);line-height:.98;letter-spacing:-.055em;font-weight:850;margin:0 0 24px;text-shadow:0 2px 14px rgba(240,74,0,.15)} h2{font-size:clamp(31px,4vw,56px);line-height:1.035;letter-spacing:-.055em;font-weight:820;margin:0 0 20px} h3{font-size:clamp(19px,1.8vw,26px);line-height:1.18;letter-spacing:-.035em;font-weight:780;margin:0 0 12px}.lead{font-size:clamp(17px,1.45vw,20px);line-height:1.74;color:var(--muted);max-width:820px;margin:0}.dark .lead,.dark p{color:#d8d8d8}.highlight,.orange{color:var(--orange)}.muted{color:var(--muted)}.section-head{max-width:910px;margin:0 0 48px}.section-head.center{text-align:center;margin-left:auto;margin-right:auto}.section-head.center .eyebrow{justify-content:center}
+    .site-header{position:sticky;top:0;z-index:1000;background:rgba(5,5,5,.84);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.09)}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo-card{width:154px;min-width:154px;background:#fff;border-radius:14px;padding:7px 10px;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.2)}.logo-card img{width:100%;height:auto}.nav-links{display:flex;align-items:center;gap:17px;color:rgba(255,255,255,.78);font-size:12.8px;font-weight:800;white-space:nowrap}.nav-links a{position:relative;padding:8px 0;transition:color .22s ease}.nav-links a:after{content:"";position:absolute;left:0;bottom:2px;width:0;height:2px;background:var(--orange);transition:width .22s ease}.nav-links a:hover,.nav-links a.active{color:#fff}.nav-links a:hover:after,.nav-links a.active:after{width:100%}.nav-actions{display:flex;gap:12px;align-items:center}.menu-toggle{display:none;width:42px;height:42px;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:rgba(255,255,255,.06);color:#fff}.menu-toggle span{display:block;width:18px;height:2px;background:#fff;margin:4px auto;border-radius:4px}.mobile-panel{display:none}
+    .btn-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:14px 22px;border-radius:999px;font-weight:900;font-size:14px;border:0;transition:transform 220ms cubic-bezier(.34,1.56,.64,1),box-shadow 220ms ease,background 220ms ease,color 220ms ease,border-color 220ms ease;white-space:nowrap}.btn-lg{min-height:60px;padding:17px 30px;font-size:15.5px}.btn-primary{color:#fff;background:linear-gradient(180deg,#f04a00 0%,#c93a00 100%);box-shadow:0 18px 52px rgba(240,74,0,.28),0 8px 16px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.16)}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 26px 70px rgba(240,74,0,.35),0 14px 28px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.22)}.btn-secondary{color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}.btn-secondary:hover{transform:translateY(-3px);background:rgba(255,255,255,.13);box-shadow:0 16px 48px rgba(0,0,0,.22)}.btn-light{color:var(--text);background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.1)}.btn-light:hover{transform:translateY(-3px);box-shadow:0 18px 48px rgba(0,0,0,.16)}.btn .arrow{transition:transform .22s ease}.btn:hover .arrow{transform:translateX(4px)}.micro{font-size:13px;color:rgba(255,255,255,.62);margin-top:16px}.micro.dark-text{color:var(--muted)}
+    .hero{position:relative;min-height:calc(100vh - 82px);padding:102px 0 62px;background:linear-gradient(135deg,#050505 0%,#0e0e0e 45%,#1a0e0a 100%);color:#fff;overflow:hidden}.hero:before{content:"";position:absolute;width:1120px;height:1120px;right:-510px;top:-420px;background:radial-gradient(circle,rgba(240,74,0,.27) 0%,rgba(240,74,0,.08) 50%,transparent 72%);border-radius:50%;filter:blur(112px);animation:heroFloat 13s ease-in-out infinite}.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:62px 62px;mask-image:radial-gradient(circle at 74% 25%,black 0%,transparent 62%);animation:gridDrift 24s linear infinite;opacity:.52}.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center}@keyframes heroFloat{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(82px,-82px) scale(1.08)}}@keyframes gridDrift{from{background-position:0 0,0 0}to{background-position:124px 62px,124px 62px}}.hero p{color:rgba(255,255,255,.74);font-size:clamp(17px,1.55vw,21px);max-width:690px;margin:0}.hero-copy .btn-row{margin-top:32px}.guarantee-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);font-size:12px;font-weight:900;color:rgba(255,255,255,.78)}.badge.dark-badge{background:#fff;color:var(--text);border:1px solid var(--border)}.badge:before{content:"";width:7px;height:7px;background:var(--orange);border-radius:50%;box-shadow:0 0 0 4px rgba(240,74,0,.12)}.trust-bar{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06);backdrop-filter:blur(14px);color:rgba(255,255,255,.78);font-size:13px;font-weight:800}.trust-bar .container{min-height:56px;display:flex;align-items:center;justify-content:center;text-align:center}
+    .card,.feature-card,.metric-card,.testimonial-card,.result-card,.process-step,.form-card,.glass-card{background:linear-gradient(135deg,#fbfaf7 0%,#f7f5f0 100%);border:1px solid var(--border);border-left:4px solid var(--orange);border-radius:var(--radius);box-shadow:0 14px 44px rgba(0,0,0,.07);transition:transform 260ms cubic-bezier(.34,1.56,.64,1),box-shadow 260ms ease,border-color 260ms ease}.card,.feature-card{padding:30px}.card:hover,.feature-card:hover,.testimonial-card:hover,.result-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-hover);border-color:rgba(240,74,0,.45)}.numbered{position:relative;padding-left:34px}.numbered:before{content:attr(data-number);position:absolute;left:-24px;top:28px;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#fff;display:grid;place-items:center;font-size:18px;font-weight:900;box-shadow:0 10px 28px rgba(240,74,0,.25);transition:transform .22s ease}.numbered:hover:before{transform:scale(1.12)}.dark-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-left:4px solid var(--orange);color:#fff}.dark-card p{color:rgba(255,255,255,.74)}.quote-block{font-size:clamp(20px,2.2vw,28px);font-weight:780;line-height:1.42;padding:30px 30px 30px 34px;border-left:4px solid var(--orange);background:rgba(240,74,0,.07);border-radius:var(--radius-sm);margin-top:28px}.result-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:38px}.result-strip .metric-card{padding:24px;border-radius:24px}.metric-card b{display:block;font-size:clamp(28px,3vw,42px);line-height:1;letter-spacing:-.055em;color:var(--orange);margin-bottom:8px}.metric-card span{display:block;font-size:13px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .console{position:relative;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.06);border-radius:34px;padding:18px;box-shadow:0 42px 120px rgba(0,0,0,.36);backdrop-filter:blur(16px);animation:floatCard 6s ease-in-out infinite}.console:hover{box-shadow:0 48px 120px rgba(240,74,0,.18),0 36px 100px rgba(0,0,0,.36)}@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}.console-shell{overflow:hidden;border-radius:26px;background:#080808;border:1px solid rgba(255,255,255,.12)}.console-top{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.1)}.console-title{display:flex;align-items:center;gap:10px;font-weight:900}.live-dot{width:10px;height:10px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 0 rgba(240,74,0,.7);animation:pulseDot 1.8s infinite}@keyframes pulseDot{70%{box-shadow:0 0 0 12px rgba(240,74,0,0)}100%{box-shadow:0 0 0 0 rgba(240,74,0,0)}}.console-mode{padding:7px 10px;border-radius:999px;border:1px solid rgba(240,74,0,.35);font-size:12px;font-weight:900;background:rgba(240,74,0,.12)}.console-body{padding:18px;display:grid;gap:14px}.mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.mini-stat{padding:14px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(255,255,255,.045)}.mini-stat small{display:block;color:rgba(255,255,255,.55);font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.08em}.mini-stat b{display:block;color:var(--orange);font-size:24px;letter-spacing:-.04em;line-height:1.2}.score-row{display:grid;grid-template-columns:150px 1fr 52px;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:13px;font-weight:750}.bar{height:9px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--orange),#ff8a3d);border-radius:999px;animation:growBar 1.15s ease both}@keyframes growBar{from{width:0}to{width:var(--w)}}.wave{display:flex;gap:5px;align-items:center;height:48px}.wave span{width:5px;border-radius:999px;background:var(--orange);height:16px;animation:wave 1.2s ease-in-out infinite}.wave span:nth-child(2n){animation-delay:.16s}.wave span:nth-child(3n){animation-delay:.3s}@keyframes wave{50%{height:42px;opacity:.75}}
+    .calc-card{border-radius:30px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.04));padding:22px;box-shadow:0 32px 100px rgba(0,0,0,.3)}.calc-card.light{background:#fff;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.1)}.calc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.field{display:grid;gap:7px;margin:0 0 13px;position:relative}.field label{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.dark .field label,.calc-card:not(.light) .field label{color:rgba(255,255,255,.6)}.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--border);border-radius:14px;background:#fff;color:var(--text);padding:14px 16px;outline:0;transition:border-color .22s ease,box-shadow .22s ease,background .22s ease}.dark .field input,.dark .field select,.dark .field textarea,.calc-card:not(.light) .field input,.calc-card:not(.light) .field select,.calc-card:not(.light) .field textarea{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.13);color:#fff}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(240,74,0,.12)}.calc-result{margin-top:15px;padding:18px;border-radius:20px;background:rgba(240,74,0,.1);border:1px solid rgba(240,74,0,.24)}.calc-result b{display:block;color:var(--orange);font-size:34px;letter-spacing:-.05em;line-height:1}.calc-result span{font-size:13px;color:rgba(255,255,255,.72)}.light .calc-result span{color:var(--muted)}.form-card{padding:40px;border-radius:32px;background:linear-gradient(135deg,#fbfaf7 0%,#fff 50%,#f7f5f0 100%);box-shadow:0 16px 50px rgba(0,0,0,.1)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.form-grid .wide{grid-column:1/-1}textarea{min-height:118px;resize:vertical}.form-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:12px}.form-note{font-size:13px;color:var(--muted);font-weight:700}.footer{background:#050505;color:#fff;border-top:1px solid rgba(240,74,0,.18);position:relative}.footer:before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--orange),transparent)}.footer-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:34px}.footer .logo-card{margin-bottom:18px}.footer a{color:rgba(255,255,255,.72);display:inline-block;margin:5px 0;position:relative}.footer a:after{content:"";position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--orange);transition:width .22s ease}.footer a:hover{color:#fff}.footer a:hover:after{width:100%}.footer-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:38px;padding-top:22px;color:rgba(255,255,255,.55);font-size:13px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .tabs{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}.tab-btn{position:relative;padding:13px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07);color:rgba(255,255,255,.72);font-weight:900;transition:color .22s ease,background .22s ease,border-color .22s ease,transform .22s ease}.tab-btn.active,.tab-btn:hover{color:#fff;background:rgba(240,74,0,.15);border-color:rgba(240,74,0,.45);transform:translateY(-2px)}.tab-panel{display:none}.tab-panel.active{display:block;animation:fadeIn .28s ease}.light-tabs .tab-btn{background:#fff;color:var(--muted);border-color:var(--border)}.light-tabs .tab-btn.active,.light-tabs .tab-btn:hover{color:var(--text);border-color:rgba(240,74,0,.45);background:rgba(240,74,0,.08)}@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.process{display:grid;gap:22px}.process-step{position:relative;padding:30px 30px 30px 76px}.process-step:before{content:attr(data-step);position:absolute;left:20px;top:28px;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#fff;display:grid;place-items:center;font-weight:900;box-shadow:0 10px 28px rgba(240,74,0,.25)}.process-step:after{content:"";position:absolute;left:41px;top:76px;width:2px;height:34px;background:linear-gradient(180deg,var(--orange),transparent);opacity:.3}.process-step:last-child:after{display:none}.process-step:hover{transform:translateX(8px)}.leak-list{display:grid;gap:18px}.leak-item{position:relative;padding:24px 24px 24px 58px;border-left:4px solid var(--orange);border-radius:20px;background:#fff;border:1px solid var(--border);box-shadow:0 10px 30px rgba(0,0,0,.06);transition:all .24s ease}.leak-item .mark{position:absolute;left:18px;top:24px;width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:900;box-shadow:0 8px 20px rgba(240,74,0,.24)}.leak-item:hover{transform:translateX(8px);box-shadow:var(--shadow-hover)}.critical{border-left-color:#dc2626}.critical .mark{background:#dc2626}.matrix{overflow:auto;border-radius:24px;border:1px solid var(--border);box-shadow:0 16px 50px rgba(0,0,0,.08)}.matrix table{width:100%;border-collapse:collapse;min-width:760px;background:#fff}.matrix th,.matrix td{padding:17px;text-align:left;border-bottom:1px solid var(--border)}.matrix th{background:#111;color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.08em}.matrix tr:last-child td{border-bottom:0}.matrix .bad{color:#dc2626;font-weight:900}.matrix .good{color:var(--orange);font-weight:900}.faq details{border-bottom:1px solid var(--border);padding:20px 0;transition:background .22s ease}.dark .faq details{border-bottom-color:rgba(255,255,255,.1)}.faq summary{cursor:pointer;font-weight:850;font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:20px;list-style:none}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:"+";font-size:26px;color:var(--orange);transition:transform .22s ease}.faq details[open]{background:rgba(240,74,0,.06);padding:20px 24px;margin:0 -24px;border-left:4px solid var(--orange)}.faq details[open] summary:after{transform:rotate(45deg)}.faq p{margin:14px 0 0}.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s cubic-bezier(.34,1.56,.64,1)}.reveal.visible{opacity:1;transform:none}
+    .before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px}.mock-page{border-radius:22px;background:#fff;border:1px solid var(--border);padding:18px;box-shadow:0 16px 50px rgba(0,0,0,.08);position:relative;overflow:hidden}.mock-page.bad{opacity:.82;filter:saturate(.8)}.mock-page.good{border-color:rgba(240,74,0,.35);box-shadow:0 24px 70px rgba(240,74,0,.12)}.mock-bar{height:10px;border-radius:999px;background:#ddd;margin:9px 0}.mock-page.good .mock-bar{background:linear-gradient(90deg,var(--orange),#ff8a3d)}.annotation{position:absolute;background:#111;color:#fff;border-left:4px solid var(--orange);border-radius:14px;padding:12px;max-width:180px;font-size:12px;font-weight:800;box-shadow:0 16px 40px rgba(0,0,0,.22)}.wireframe{position:relative;min-height:420px;border-radius:30px;background:#fff;border:1px solid var(--border);padding:28px;box-shadow:0 20px 70px rgba(0,0,0,.1);overflow:hidden}.website-examples{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.site-shot{min-height:260px;border-radius:26px;background:linear-gradient(145deg,#111,#1f110a);padding:18px;box-shadow:0 16px 50px rgba(0,0,0,.12);transition:transform .24s ease,box-shadow .24s ease}.site-shot:hover{transform:scale(1.035);box-shadow:0 30px 80px rgba(240,74,0,.16)}.shot-window{height:100%;border-radius:18px;background:#fff;padding:16px}.funnel{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:stretch}.funnel-node{position:relative;padding:22px;border-radius:22px;background:#fff;border:1px solid var(--border);border-left:4px solid var(--orange);font-weight:900}.funnel-node:after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);color:var(--orange);font-size:24px}.funnel-node:last-child:after{display:none}.journey-lane{display:grid;gap:12px}.journey-step{display:grid;grid-template-columns:140px 1fr 90px;gap:14px;align-items:center;padding:16px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}.dropoff{color:#ff7442;font-weight:900}.recovery-flow{margin-top:14px;padding:16px;border-radius:20px;background:rgba(240,74,0,.12);border:1px solid rgba(240,74,0,.32)}.transcript{display:grid;gap:10px}.bubble{padding:13px 14px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);font-size:14px}.bubble.sara{border-left:4px solid var(--orange)}.mode-panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.checklist-modal{position:fixed;inset:0;z-index:1400;display:none;place-items:center;background:rgba(0,0,0,.64);backdrop-filter:blur(10px);padding:20px}.checklist-modal.open{display:grid}.popup-card{width:min(640px,100%);border-radius:34px;background:#fff;padding:38px;box-shadow:0 30px 120px rgba(0,0,0,.35);position:relative}.popup-close{position:absolute;right:18px;top:18px;width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:#fff;font-size:22px}.comparison-card{border-radius:30px;background:#fff;border:1px solid var(--border);box-shadow:0 18px 60px rgba(0,0,0,.1);overflow:hidden}.comparison-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}.comparison-row:last-child{border-bottom:0}.comparison-row>div{padding:20px}.comparison-row>div:first-child{border-right:1px solid var(--border);background:#f3f1ed}.pill{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(240,74,0,.1);color:var(--orange);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.sticky-mobile-cta{display:none}
+    @media(max-width:1060px){.nav-links,.nav-actions .desktop-cta{display:none}.menu-toggle{display:block}.mobile-panel{position:fixed;top:82px;left:0;right:0;display:none;background:rgba(5,5,5,.96);border-bottom:1px solid rgba(255,255,255,.1);padding:18px 20px 22px;z-index:999}.mobile-panel.open{display:grid;gap:12px}.mobile-panel a{color:#fff;font-weight:900;padding:12px;border-radius:14px;background:rgba(255,255,255,.06)}.hero-inner,.split,.split-wide{grid-template-columns:1fr}.hero{min-height:auto}.grid-4{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(2,1fr)}.result-strip{grid-template-columns:repeat(2,1fr)}.funnel{grid-template-columns:1fr}.funnel-node:after{display:none}.mode-panel-grid{grid-template-columns:1fr}.sticky-mobile-cta{display:flex;position:fixed;left:14px;right:14px;bottom:14px;z-index:1200}.sticky-mobile-cta .btn{width:100%}}
+    @media(max-width:720px){.container{width:min(100% - 28px,var(--container))}.section{padding:78px 0}.grid-2,.grid-3,.grid-4,.result-strip,.form-grid,.before-after,.website-examples{grid-template-columns:1fr}.hero{padding:72px 0 44px}.logo-card{width:132px;min-width:132px}.console{padding:12px;border-radius:24px}.mini-grid{grid-template-columns:1fr}.score-row{grid-template-columns:1fr}.journey-step{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.form-card{padding:26px}.popup-card{padding:28px}.calc-grid{grid-template-columns:1fr}h1{font-size:clamp(38px,12vw,56px)}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+
+    /* ============================================================
+       Elite Premium Readability & Polish Overrides — 2025/2026
+       These overrides preserve all existing functionality while
+       upgrading contrast, spacing, typography, cards, consoles,
+       buttons, badges, mobile CTA, and interaction polish.
+    ============================================================ */
+    :root{
+      --paper:#fbfaf7;
+      --warm:#f7f5f0;
+      --orange:#f04a00;
+      --orange-dark:#c93a00;
+      --elite-shadow:0 20px 60px rgba(0,0,0,.08);
+      --elite-shadow-hover:0 34px 92px rgba(240,74,0,.18),0 24px 70px rgba(0,0,0,.14);
+      --elite-border-dark:rgba(255,255,255,.18);
+      --radius:28px;
+      --radius-md:24px;
+      --radius-sm:16px;
+    }
+
+    html{scroll-padding-top:96px;}
+    body{
+      line-height:1.68;
+      background:linear-gradient(180deg,var(--paper),var(--warm));
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .container{width:min(var(--container),calc(100% - 48px));}
+    .section{padding:132px 0 !important;}
+    .section-tight{padding:104px 0 !important;}
+    .section-head{margin-bottom:58px;max-width:940px;}
+
+    h1{
+      letter-spacing:-.065em !important;
+      font-weight:850 !important;
+      line-height:1.02 !important;
+      text-wrap:balance;
+    }
+    h2{
+      letter-spacing:-.058em !important;
+      font-weight:820 !important;
+      line-height:1.075 !important;
+      text-wrap:balance;
+    }
+    h3{line-height:1.24 !important;text-wrap:balance;}
+    p{line-height:1.76;}
+    .lead{line-height:1.82;font-weight:470;}
+
+    /* Dark readability overhaul */
+    .dark,
+    .hero,
+    .console,
+    .console-shell,
+    .dark-card,
+    .calc-card:not(.light),
+    .journey-step,
+    .bubble{
+      color:#f4f4f4 !important;
+    }
+    .dark p,
+    .dark .lead,
+    .hero p,
+    .hero .lead,
+    .console p,
+    .console .lead,
+    .dark-card p,
+    .calc-card:not(.light) p,
+    .journey-step,
+    .bubble,
+    .transcript,
+    .support-line,
+    .hero-note{
+      color:#e9e9e9 !important;
+    }
+    .dark .muted,
+    .hero .muted,
+    .console .muted,
+    .dark small,
+    .hero small,
+    .console small,
+    .mini-stat small,
+    .score-row,
+    .console-mode,
+    .micro,
+    .dark .field label,
+    .calc-card:not(.light) .field label{
+      color:rgba(255,255,255,.92) !important;
+      font-weight:520 !important;
+    }
+    .dark a:not(.btn),
+    .hero a:not(.btn){color:#f4f4f4;}
+
+    /* Premium primary CTA and button consistency */
+    .btn{
+      min-height:56px;
+      padding:16px 28px;
+      font-size:15px;
+      letter-spacing:-.01em;
+      border-radius:999px;
+      will-change:transform;
+    }
+    .btn-lg{min-height:64px;padding:18px 34px;font-size:15.8px;}
+    .btn-primary{
+      background:linear-gradient(180deg,#ff5a0a 0%,#f04a00 38%,#c93a00 100%) !important;
+      box-shadow:0 20px 56px rgba(240,74,0,.34),0 10px 24px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.22) !important;
+    }
+    .btn-primary:hover{
+      transform:translateY(-4px) !important;
+      box-shadow:0 30px 84px rgba(240,74,0,.44),0 18px 38px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.28) !important;
+    }
+    .btn-secondary,.btn-light,.btn-outline-dark,.tab-btn{min-height:54px;}
+
+    /* Hero: taller, clearer, more premium */
+    .hero{
+      min-height:calc(100vh - 82px);
+      padding:142px 0 98px !important;
+      background:
+        radial-gradient(circle at 78% 18%,rgba(240,74,0,.28),transparent 30%),
+        radial-gradient(circle at 12% 88%,rgba(255,255,255,.055),transparent 24%),
+        linear-gradient(135deg,#050505 0%,#0c0c0c 42%,#1b0d06 100%) !important;
+    }
+    .hero:before{opacity:.98;filter:blur(128px) !important;}
+    .hero-inner{gap:86px;align-items:center;}
+    .hero-copy{max-width:790px;}
+    .hero-copy .btn-row{margin-top:40px;}
+    .hero .eyebrow{margin-bottom:22px;}
+    .hero p{font-weight:480;line-height:1.82;}
+
+    /* Elegant guarantee/trust pills */
+    .guarantee-row{gap:12px;margin-top:30px;}
+    .badge{
+      padding:10px 15px;
+      border-radius:999px;
+      background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.07)) !important;
+      border:1px solid rgba(255,255,255,.22) !important;
+      color:rgba(255,255,255,.93) !important;
+      font-weight:760;
+      letter-spacing:-.005em;
+      box-shadow:0 14px 38px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.12);
+      backdrop-filter:blur(14px);
+    }
+    .badge.dark-badge{
+      background:linear-gradient(180deg,#fff,#fbfaf7) !important;
+      color:var(--text) !important;
+      border:1px solid rgba(240,74,0,.18) !important;
+      box-shadow:0 14px 36px rgba(0,0,0,.08);
+    }
+
+    /* Card system lockdown */
+    .card,
+    .feature-card,
+    .metric-card,
+    .testimonial-card,
+    .result-card,
+    .process-step,
+    .form-card,
+    .glass-card,
+    .leak-item,
+    .mock-page,
+    .site-shot,
+    .comparison-card,
+    .matrix,
+    .calc-card.light{
+      border-radius:28px !important;
+      border-left:5px solid var(--orange) !important;
+      box-shadow:var(--elite-shadow) !important;
+      transition:transform 280ms cubic-bezier(.34,1.56,.64,1),box-shadow 280ms ease,border-color 280ms ease,background 280ms ease !important;
+    }
+    .card,
+    .feature-card,
+    .testimonial-card,
+    .result-card,
+    .form-card,
+    .glass-card,
+    .metric-card{
+      padding:38px !important;
+    }
+    .card:hover,
+    .feature-card:hover,
+    .testimonial-card:hover,
+    .result-card:hover,
+    .metric-card:hover,
+    .glass-card:hover,
+    .leak-item:hover,
+    .mock-page:hover,
+    .site-shot:hover,
+    .comparison-card:hover,
+    .calc-card.light:hover{
+      transform:translateY(-10px) !important;
+      box-shadow:var(--elite-shadow-hover) !important;
+      border-color:rgba(240,74,0,.52) !important;
+    }
+    .dark-card{
+      background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.055)) !important;
+      border:1px solid rgba(255,255,255,.18) !important;
+      border-left:5px solid var(--orange) !important;
+      box-shadow:0 24px 72px rgba(0,0,0,.32) !important;
+    }
+    .numbered{padding-left:50px !important;}
+    .numbered:before{left:-25px !important;top:36px !important;}
+
+    /* Console & interactive polish */
+    .console{
+      padding:28px !important;
+      border-radius:38px !important;
+      background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.055)) !important;
+      border:1px solid rgba(255,255,255,.22) !important;
+      box-shadow:0 46px 130px rgba(0,0,0,.42),0 0 0 1px rgba(240,74,0,.10) inset !important;
+      backdrop-filter:blur(22px) saturate(128%);
+    }
+    .console:hover{
+      transform:translateY(-10px) !important;
+      box-shadow:0 54px 140px rgba(240,74,0,.22),0 38px 105px rgba(0,0,0,.42),0 0 0 1px rgba(240,74,0,.18) inset !important;
+    }
+    .console-shell{
+      border-radius:30px !important;
+      background:linear-gradient(180deg,#101010,#070707) !important;
+      border:1px solid rgba(255,255,255,.18) !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    .console-top{
+      padding:22px 24px !important;
+      border-bottom:1px solid rgba(255,255,255,.14) !important;
+    }
+    .console-title{font-size:15px;letter-spacing:-.01em;}
+    .console-body{padding:28px !important;gap:20px !important;}
+    .mini-grid{gap:16px !important;}
+    .mini-stat{
+      padding:20px !important;
+      border-radius:22px !important;
+      background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.045)) !important;
+      border:1px solid rgba(255,255,255,.16) !important;
+      box-shadow:0 14px 36px rgba(0,0,0,.18);
+    }
+    .mini-stat small{
+      margin-bottom:8px;
+      line-height:1.35;
+      letter-spacing:.075em;
+    }
+    .mini-stat b{
+      font-size:30px !important;
+      line-height:1.05 !important;
+      letter-spacing:-.055em;
+    }
+    .score-row{
+      grid-template-columns:168px 1fr 62px !important;
+      gap:14px !important;
+      font-size:14px !important;
+      letter-spacing:-.005em;
+      align-items:center;
+    }
+    .bar{
+      height:14px !important;
+      background:rgba(255,255,255,.16) !important;
+      border:1px solid rgba(255,255,255,.06);
+      box-shadow:inset 0 1px 2px rgba(0,0,0,.18);
+    }
+    .bar i{
+      background:linear-gradient(90deg,#ff6b1a 0%,#f04a00 52%,#ffb07c 100%) !important;
+      box-shadow:0 0 22px rgba(240,74,0,.38);
+    }
+    .wave{height:58px;gap:6px;}
+    .wave span{width:6px;box-shadow:0 0 16px rgba(240,74,0,.22);}
+
+    /* Calculators, forms and inputs */
+    .calc-card{
+      padding:30px !important;
+      border-radius:34px !important;
+    }
+    .calc-card:not(.light){
+      background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.055)) !important;
+      border:1px solid rgba(255,255,255,.18) !important;
+      box-shadow:0 34px 105px rgba(0,0,0,.34) !important;
+    }
+    .field{gap:9px;margin-bottom:16px;}
+    .field label{font-size:12px;letter-spacing:.09em;line-height:1.45;}
+    .field input,.field select,.field textarea{
+      min-height:54px;
+      border-radius:16px;
+      padding:16px 18px;
+      line-height:1.45;
+    }
+    .dark .field input,
+    .dark .field select,
+    .dark .field textarea,
+    .calc-card:not(.light) .field input,
+    .calc-card:not(.light) .field select,
+    .calc-card:not(.light) .field textarea{
+      background:rgba(255,255,255,.085) !important;
+      border-color:rgba(255,255,255,.22) !important;
+      color:#f4f4f4 !important;
+    }
+    .dark .field input::placeholder,
+    .dark .field textarea::placeholder,
+    .calc-card:not(.light) .field input::placeholder,
+    .calc-card:not(.light) .field textarea::placeholder{
+      color:rgba(255,255,255,.66) !important;
+    }
+    .form-card{padding:44px !important;}
+    .calc-result{
+      padding:22px !important;
+      border-radius:24px !important;
+      background:linear-gradient(135deg,rgba(240,74,0,.16),rgba(240,74,0,.08)) !important;
+      border:1px solid rgba(240,74,0,.32) !important;
+    }
+    .calc-result b{font-size:38px !important;line-height:1.05;}
+    .calc-result span{color:#e9e9e9 !important;font-weight:560;}
+    .light .calc-result span{color:#5d5d5d !important;}
+
+    /* Process and content rhythm */
+    .process{gap:26px;}
+    .process-step{padding:38px 38px 38px 96px !important;}
+    .process-step:before{left:28px !important;top:38px !important;width:48px;height:48px;}
+    .process-step:after{left:52px !important;top:88px !important;height:42px;}
+    .quote-block{padding:36px 38px !important;border-left:5px solid var(--orange) !important;border-radius:24px !important;}
+    .leak-item{padding:30px 30px 30px 68px !important;}
+    .leak-item .mark{left:24px !important;top:30px !important;}
+    .result-strip{gap:24px;margin-top:48px;}
+
+    /* Navigation and footer polish */
+    .site-header{
+      background:rgba(5,5,5,.88) !important;
+      box-shadow:0 18px 46px rgba(0,0,0,.18);
+    }
+    .nav{height:88px;}
+    .logo-card{border-radius:16px;box-shadow:0 16px 42px rgba(0,0,0,.24);}
+    .footer .section,.footer.section{padding-top:104px !important;padding-bottom:72px !important;}
+
+    /* Mobile polish */
+    @media(max-width:1060px){
+      .hero-inner,.split,.split-wide{gap:56px;}
+      .mobile-panel{top:88px;}
+    }
+    @media(max-width:720px){
+      .container{width:min(100% - 30px,var(--container));}
+      .section{padding:88px 0 !important;}
+      .section-tight{padding:76px 0 !important;}
+      .section-head{margin-bottom:38px;}
+      .hero{padding:96px 0 76px !important;}
+      .hero-inner{gap:42px;}
+      .btn{width:auto;min-height:54px;padding:15px 22px;white-space:normal;text-align:center;}
+      .btn-row{align-items:stretch;}
+      .btn-row .btn{flex:1 1 100%;}
+      .console{padding:16px !important;border-radius:28px !important;}
+      .console-shell{border-radius:22px !important;}
+      .console-top{padding:18px !important;}
+      .console-body{padding:20px !important;}
+      .score-row{grid-template-columns:1fr !important;gap:8px !important;}
+      .mini-stat{padding:18px !important;}
+      .card,.feature-card,.testimonial-card,.result-card,.form-card,.glass-card,.metric-card{padding:30px !important;}
+      .process-step{padding:30px 30px 30px 86px !important;}
+      .process-step:before{left:24px !important;top:30px !important;}
+      .sticky-mobile-cta{
+        left:14px;right:14px;bottom:max(14px,env(safe-area-inset-bottom));
+        padding:8px;
+        border-radius:999px;
+        background:rgba(5,5,5,.70);
+        backdrop-filter:blur(14px);
+        box-shadow:0 18px 50px rgba(0,0,0,.28);
+      }
+      .sticky-mobile-cta .btn{width:100%;min-height:54px;}
+    }
+
+  
+
+    /* ============================================================
+       Contrast Safety Patch v4 — fixes white text on white surfaces
+       Scope: light cards/forms/tables that may appear inside dark
+       sections are forced back to dark readable text. True dark
+       surfaces keep the premium bright text system.
+    ============================================================ */
+
+    /* Light surfaces must always use dark text, even when nested in .dark sections. */
+    .form-card,
+    .comparison-card,
+    .matrix,
+    .matrix table,
+    .matrix td,
+    .matrix tr,
+    .mock-page,
+    .shot-window,
+    .calc-card.light,
+    .popup-card,
+    .card:not(.dark-card),
+    .feature-card:not(.dark-card),
+    .metric-card:not(.dark-card),
+    .testimonial-card:not(.dark-card),
+    .result-card:not(.dark-card),
+    .glass-card:not(.dark-card),
+    .process-step:not(.dark-card),
+    .leak-item {
+      color: var(--text) !important;
+    }
+
+    .form-card h1,
+    .form-card h2,
+    .form-card h3,
+    .comparison-card h1,
+    .comparison-card h2,
+    .comparison-card h3,
+    .matrix h1,
+    .matrix h2,
+    .matrix h3,
+    .mock-page h1,
+    .mock-page h2,
+    .mock-page h3,
+    .shot-window h1,
+    .shot-window h2,
+    .shot-window h3,
+    .calc-card.light h1,
+    .calc-card.light h2,
+    .calc-card.light h3,
+    .popup-card h1,
+    .popup-card h2,
+    .popup-card h3,
+    .card:not(.dark-card) h1,
+    .card:not(.dark-card) h2,
+    .card:not(.dark-card) h3,
+    .feature-card:not(.dark-card) h1,
+    .feature-card:not(.dark-card) h2,
+    .feature-card:not(.dark-card) h3,
+    .metric-card:not(.dark-card) h1,
+    .metric-card:not(.dark-card) h2,
+    .metric-card:not(.dark-card) h3,
+    .testimonial-card:not(.dark-card) h1,
+    .testimonial-card:not(.dark-card) h2,
+    .testimonial-card:not(.dark-card) h3,
+    .result-card:not(.dark-card) h1,
+    .result-card:not(.dark-card) h2,
+    .result-card:not(.dark-card) h3,
+    .glass-card:not(.dark-card) h1,
+    .glass-card:not(.dark-card) h2,
+    .glass-card:not(.dark-card) h3,
+    .process-step:not(.dark-card) h1,
+    .process-step:not(.dark-card) h2,
+    .process-step:not(.dark-card) h3,
+    .leak-item h1,
+    .leak-item h2,
+    .leak-item h3 {
+      color: var(--text) !important;
+    }
+
+    .form-card p,
+    .form-card .lead,
+    .form-card .muted,
+    .form-card .form-note,
+    .comparison-card p,
+    .comparison-card .lead,
+    .comparison-card .muted,
+    .matrix p,
+    .matrix td,
+    .matrix .muted,
+    .mock-page p,
+    .mock-page .muted,
+    .shot-window p,
+    .shot-window .muted,
+    .calc-card.light p,
+    .calc-card.light .lead,
+    .calc-card.light .muted,
+    .popup-card p,
+    .popup-card .lead,
+    .popup-card .muted,
+    .card:not(.dark-card) p,
+    .card:not(.dark-card) .lead,
+    .card:not(.dark-card) .muted,
+    .feature-card:not(.dark-card) p,
+    .feature-card:not(.dark-card) .lead,
+    .feature-card:not(.dark-card) .muted,
+    .metric-card:not(.dark-card) p,
+    .metric-card:not(.dark-card) .muted,
+    .testimonial-card:not(.dark-card) p,
+    .testimonial-card:not(.dark-card) .muted,
+    .result-card:not(.dark-card) p,
+    .result-card:not(.dark-card) .muted,
+    .glass-card:not(.dark-card) p,
+    .glass-card:not(.dark-card) .lead,
+    .glass-card:not(.dark-card) .muted,
+    .process-step:not(.dark-card) p,
+    .process-step:not(.dark-card) .muted,
+    .leak-item p,
+    .leak-item .muted {
+      color: #4f4f4f !important;
+    }
+
+    /* Light forms remain light/readable even inside dark sections. */
+    .form-card .field label,
+    .calc-card.light .field label,
+    .popup-card .field label {
+      color: #555 !important;
+      font-weight: 820 !important;
+    }
+
+    .form-card .field input,
+    .form-card .field select,
+    .form-card .field textarea,
+    .calc-card.light .field input,
+    .calc-card.light .field select,
+    .calc-card.light .field textarea,
+    .popup-card .field input,
+    .popup-card .field select,
+    .popup-card .field textarea {
+      background: #ffffff !important;
+      color: var(--text) !important;
+      border-color: rgba(11,11,11,.16) !important;
+      box-shadow: none;
+    }
+
+    .form-card .field input::placeholder,
+    .form-card .field textarea::placeholder,
+    .calc-card.light .field input::placeholder,
+    .calc-card.light .field textarea::placeholder,
+    .popup-card .field input::placeholder,
+    .popup-card .field textarea::placeholder {
+      color: rgba(11,11,11,.46) !important;
+    }
+
+    .form-card .field input:focus,
+    .form-card .field select:focus,
+    .form-card .field textarea:focus,
+    .calc-card.light .field input:focus,
+    .calc-card.light .field select:focus,
+    .calc-card.light .field textarea:focus,
+    .popup-card .field input:focus,
+    .popup-card .field select:focus,
+    .popup-card .field textarea:focus {
+      border-color: var(--orange) !important;
+      box-shadow: 0 0 0 4px rgba(240,74,0,.12) !important;
+      background: #fff !important;
+    }
+
+    /* Preserve button contrast inside light surfaces. */
+    .form-card .btn-primary,
+    .comparison-card .btn-primary,
+    .matrix .btn-primary,
+    .mock-page .btn-primary,
+    .shot-window .btn-primary,
+    .calc-card.light .btn-primary,
+    .popup-card .btn-primary,
+    .card:not(.dark-card) .btn-primary,
+    .feature-card:not(.dark-card) .btn-primary,
+    .metric-card:not(.dark-card) .btn-primary,
+    .testimonial-card:not(.dark-card) .btn-primary,
+    .result-card:not(.dark-card) .btn-primary,
+    .glass-card:not(.dark-card) .btn-primary,
+    .process-step:not(.dark-card) .btn-primary,
+    .leak-item .btn-primary {
+      color: #ffffff !important;
+    }
+
+    .form-card .btn-light,
+    .form-card .btn-outline-dark,
+    .comparison-card .btn-light,
+    .comparison-card .btn-outline-dark,
+    .calc-card.light .btn-light,
+    .calc-card.light .btn-outline-dark,
+    .popup-card .btn-light,
+    .popup-card .btn-outline-dark {
+      color: var(--text) !important;
+      background: #ffffff !important;
+    }
+
+    /* Light calculator result text must not inherit dark calculator readability rules. */
+    .calc-card.light .calc-result,
+    .light .calc-result {
+      background: linear-gradient(135deg,rgba(240,74,0,.12),rgba(240,74,0,.045)) !important;
+    }
+    .calc-card.light .calc-result span,
+    .light .calc-result span {
+      color: #555 !important;
+      font-weight: 650 !important;
+    }
+
+    /* Dark surfaces retain readable bright text. */
+    .dark-card,
+    .dark-card h1,
+    .dark-card h2,
+    .dark-card h3,
+    .console,
+    .console h1,
+    .console h2,
+    .console h3,
+    .console-shell,
+    .console-shell h1,
+    .console-shell h2,
+    .console-shell h3,
+    .hero,
+    .hero h1,
+    .hero h2,
+    .hero h3,
+    .footer,
+    .footer h1,
+    .footer h2,
+    .footer h3,
+    .bubble,
+    .journey-step {
+      color: #f4f4f4 !important;
+    }
+
+    .dark-card p,
+    .console p,
+    .console .lead,
+    .console-shell p,
+    .hero p,
+    .hero .lead,
+    .footer p,
+    .bubble,
+    .journey-step,
+    .support-line,
+    .hero-note {
+      color: #e9e9e9 !important;
+    }
+
+    .console .mini-stat small,
+    .console .score-row,
+    .console .console-mode,
+    .hero small,
+    .dark small,
+    .footer small {
+      color: rgba(255,255,255,.92) !important;
+      font-weight: 520 !important;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="logo-card" data-route="home" aria-label="Digital Surge Labs Home"><img src="data:image/webp;base64,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" alt="Digital Surge Labs logo" /></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#home" data-route="home">Home</a>
+        <a href="#audit" data-route="audit">Digital Leak Audit</a>
+        <a href="#web" data-route="web">Web Creation</a>
+        <a href="#growth" data-route="growth">Growth Systems</a>
+        <a href="#sara" data-route="sara">S.A.R.A</a>
+        <a href="#commerce" data-route="commerce">Digital Commerce</a>
+        <a href="#contact" data-route="contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-primary desktop-cta" href="https://calendly.com/usama-fintech/30min" target="_blank" rel="noopener">Get Your Audit <span class="arrow">→</span></a>
+        <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-panel" id="mobilePanel">
+      <a href="#home" data-route="home">Home</a>
+      <a href="#audit" data-route="audit">Digital Leak Audit</a>
+      <a href="#web" data-route="web">Web Creation</a>
+      <a href="#growth" data-route="growth">Growth Systems</a>
+      <a href="#sara" data-route="sara">S.A.R.A</a>
+      <a href="#commerce" data-route="commerce">Digital Commerce</a>
+      <a href="#contact" data-route="contact">Contact</a>
+      <a class="btn btn-primary" href="https://calendly.com/usama-fintech/30min" target="_blank" rel="noopener">Get Your Audit →</a>
+    </div>
+  </header>
+
+  <div class="sticky-mobile-cta"><a class="btn btn-primary" href="https://calendly.com/usama-fintech/30min" target="_blank" rel="noopener">Get Your Audit →</a></div>
+
+  <main>
+    <!-- HOME PAGE -->
+    <section class="page active" id="page-home" data-title="Digital Surge Labs | Digital Leak Audits & Conversion Systems">
+      <section class="hero" id="home">
+        <div class="container hero-inner">
+          <div class="hero-copy reveal">
+            <div class="eyebrow">Digital leak audits + conversion systems</div>
+            <h1>Most service businesses lose <span class="highlight">30-60%</span> of qualified leads without knowing it. We find the leaks.</h1>
+            <p>Digital Leak Audit + Conversion Systems for US service businesses that want predictable, high-quality inquiries.</p>
+            <div class="calc-card" style="margin-top:28px;max-width:660px">
+              <h3>See Your Potential Leak</h3>
+              <div class="calc-grid">
+                <div class="field"><label>Monthly qualified leads</label><input id="homeLeads" type="number" value="80" min="0"></div>
+                <div class="field"><label>Average customer value</label><input id="homeValue" type="number" value="2500" min="0"></div>
+                <div class="field"><label>Estimated lead leakage</label><input id="homeLeak" type="number" value="35" min="0" max="90"></div>
+                <div class="calc-result"><b id="homeLeakValue">$70,000</b><span>estimated monthly opportunity at risk</span></div>
+              </div>
+            </div>
+            <div class="btn-row">
+              <a class="btn btn-primary btn-lg" href="https://calendly.com/usama-fintech/30min" target="_blank" rel="noopener">Get Your Leak Audit <span class="arrow">→</span></a>
+              <a class="btn btn-secondary" href="mailto:hello@digitalsurgelabs.com?subject=Digital%20Leak%20Audit%20Request">Email Digital Surge Labs</a>
+            </div>
+            <div class="guarantee-row">
+              <span class="badge">2 Business Day Delivery</span><span class="badge">US-Based</span><span class="badge">No-Obligation Audit</span><span class="badge">Limited audit slots per week</span>
+            </div>
+          </div>
+          <div class="console reveal">
+            <div class="console-shell">
+              <div class="console-top"><div class="console-title"><span class="live-dot"></span> Live Leak Console</div><span class="console-mode">Running Scan</span></div>
+              <div class="console-body">
+                <div class="mini-grid">
+                  <div class="mini-stat"><small>Recovered Opportunity</small><b>$187K</b></div>
+                  <div class="mini-stat"><small>Leaks Flagged</small><b>14</b></div>
+                  <div class="mini-stat"><small>Lead Path</small><b>Critical</b></div>
+                  <div class="mini-stat"><small>Top Fix</small><b>CTA Flow</b></div>
+                </div>
+                <div class="score-row"><span>Homepage clarity</span><span class="bar"><i style="--w:44%"></i></span><b>4.4</b></div>
+                <div class="score-row"><span>Trust proof</span><span class="bar"><i style="--w:58%"></i></span><b>5.8</b></div>
+                <div class="score-row"><span>Lead capture</span><span class="bar"><i style="--w:36%"></i></span><b>3.6</b></div>
+                <div class="score-row"><span>Follow-up speed</span><span class="bar"><i style="--w:41%"></i></span><b>4.1</b></div>
+                <div class="quote-block" style="font-size:18px;color:#fff;background:rgba(240,74,0,.1)">Priority: See the leaks before you spend another dollar on ads.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="trust-bar"><div class="container">Trusted by dental practices, law firms, clinics & home service companies in California, New York, Texas & Florida</div></div>
+      <section class="section warm">
+        <div class="container">
+          <div class="section-head center reveal"><div class="eyebrow">What we do</div><h2>Audit the leak. Build the system. Track the recovery.</h2><p class="lead">We combine diagnosis, conversion assets, automation, and tracking so your digital presence stops leaking qualified opportunities.</p></div>
+          <div class="grid grid-3">
+            <div class="feature-card numbered reveal" data-number="1"><h3>Digital Leak Audit</h3><p>We identify where your website, trust signals, competitor position, CTAs, and follow-up journey are costing leads.</p></div>
+            <div class="feature-card numbered reveal" data-number="2"><h3>Build & Automate</h3><p>We fix the highest-impact parts first: pages, messages, booking paths, follow-up flows, S.A.R.A workflows, and automation.</p></div>
+            <div class="feature-card numbered reveal" data-number="3"><h3>Track & Optimize</h3><p>We measure inquiry flow, response speed, conversion points, and pipeline signals so growth becomes easier to improve.</p></div>
+          </div>
+          <div class="result-strip reveal">
+            <div class="metric-card"><b>$187K</b><span>Recovered opportunity identified</span></div><div class="metric-card"><b>47</b><span>Qualified leads recovered in 30 days</span></div><div class="metric-card"><b>40%</b><span>Faster response path mapped</span></div><div class="metric-card"><b>8+</b><span>Conversion leaks found per audit</span></div>
+          </div>
+        </div>
+      </section>
+      <section class="section paper">
+        <div class="container split-wide">
+          <div class="reveal"><div class="eyebrow">What we find + why DSL</div><h2>Digital leaks show where the journey breaks. Omni Presence rebuilds it.</h2><p class="lead">A business can look active online and still lose leads because the journey is unclear, slow, inconsistent, or less trustworthy than a competitor. We find those weak points, then rebuild the system so prospects can find you, trust you, and choose you faster.</p><div class="quote-block">We do not build digital decoration. We build the path from attention to qualified inquiry.</div></div>
+          <div class="leak-list reveal"><div class="leak-item"><span class="mark">!</span><h3>Prospects do not understand your offer fast enough</h3><p>Homepage clarity is often the first leak.</p></div><div class="leak-item"><span class="mark">!</span><h3>Trust proof appears too late</h3><p>Reviews, credentials, and outcomes must show before hesitation builds.</p></div><div class="leak-item"><span class="mark">!</span><h3>Leads cool down after they show interest</h3><p>Slow follow-up quietly gives competitors the advantage.</p></div></div>
+        </div>
+      </section>
+      <section class="section dark textured"><div class="container"><div class="section-head center reveal"><div class="eyebrow">Client feedback</div><h2>Real results our clients see after plugging the leaks</h2></div><div class="grid grid-3"><div class="testimonial-card dark-card reveal"><span class="quote-mark">“</span><p>DSL showed us exactly where our website was losing serious inquiries. The audit gave us the order of what to fix first.</p><b>Owner, Home Services Company — California</b></div><div class="testimonial-card dark-card reveal"><span class="quote-mark">“</span><p>We already had traffic. DSL helped us understand the friction in our pages, CTAs, and follow-up process.</p><b>Managing Partner, Professional Services — New York</b></div><div class="testimonial-card dark-card reveal"><span class="quote-mark">“</span><p>The biggest value was clarity. We saw why competitors looked stronger and what needed to change.</p><b>Clinic Director, Aesthetic Clinic — Florida</b></div></div></div></section>
+      <section class="section warm"><div class="container split"><div class="reveal"><div class="eyebrow">Start here</div><h2>Get your Digital Leak Audit.</h2><p class="lead">Send your website and we’ll help identify the digital gaps that may be costing leads, trust, and conversion. Takes 45 seconds • Full report in 2 business days.</p></div><form class="form-card mailto-form reveal" data-subject="Digital Leak Audit Request"><div class="form-grid"><div class="field"><label>Name</label><input name="Name" required></div><div class="field"><label>Email</label><input name="Email" type="email" required></div><div class="field wide"><label>Website URL</label><input name="Website" type="url" placeholder="https://"></div><div class="field wide"><label>What feels stuck?</label><textarea name="Challenge"></textarea></div></div><div class="form-actions"><button class="btn btn-primary" type="submit">Book Your Leak Audit →</button><span class="form-note">No sales pitch. Just clear findings and prioritized fixes.</span></div></form></div></section>
+    </section>
+
+    <!-- DIGITAL LEAK AUDIT -->
+    <section class="page" id="page-audit" data-title="Digital Leak Audit | Digital Surge Labs">
+      <section class="hero" id="audit"><div class="container hero-inner"><div class="hero-copy reveal"><div class="eyebrow">Digital Leak Audit</div><h1>Your Website Is Leaking Qualified Leads. <span class="highlight">Here’s Exactly Where.</span></h1><p>Comprehensive Digital Leak Audit that reveals clarity, trust, conversion, competitor, and follow-up gaps in 2 business days.</p><div class="btn-row"><a class="btn btn-primary btn-lg" href="https://calendly.com/usama-fintech/30min" target="_blank" rel="noopener">Get My Free Leak Report <span class="arrow">→</span></a><a class="btn btn-secondary" href="mailto:hello@digitalsurgelabs.com?subject=Digital%20Leak%20Audit">Email Us</a></div><div class="guarantee-row"><span class="badge">2 Business Day Delivery</span><span class="badge">No sales pitch</span><span class="badge">Prioritized fixes</span></div></div><div class="console reveal"><div class="console-shell"><div class="console-top"><div class="console-title"><span class="live-dot"></span> Diagnostic Console</div><span class="console-mode">Personalized</span></div><div class="console-body"><div class="field"><label>Your website URL</label><input id="auditUrl" placeholder="https://yourbusiness.com"></div><div class="audit-bars"><button class="audit-bar score-row active" data-finding="Homepage clarity score: 4.2/10 — prospects may not understand your offer in under 8 seconds."><span>Homepage clarity</span><span class="bar"><i style="--w:42%"></i></span><b>4.2</b></button><button class="audit-bar score-row" data-finding="Trust proof score: 5.1/10 — proof exists but appears too late in the journey."><span>Trust proof</span><span class="bar"><i style="--w:51%"></i></span><b>5.1</b></button><button class="audit-bar score-row" data-finding="Lead capture score: 3.8/10 — high-intent visitors do not get a clear next step."><span>Lead capture</span><span class="bar"><i style="--w:38%"></i></span><b>3.8</b></button></div><div class="recovery-flow" id="auditFinding">Homepage clarity score: 4.2/10 — prospects may not understand your offer in under 8 seconds.</div></div></div></div></div></section>
+      <section class="section warm"><div class="container"><div class="section-head reveal"><div class="eyebrow">Audit scope</div><h2>We review the touchpoints that shape trust, visibility, and lead flow.</h2></div><div class="grid grid-3"><div class="feature-card numbered reveal" data-number="1"><h3>Homepage clarity</h3><p>Does your offer make sense in 3 seconds?</p></div><div class="feature-card numbered reveal" data-number="2"><h3>Lead capture path</h3><p>Where are prospects hesitating before they contact you?</p></div><div class="feature-card numbered reveal" data-number="3"><h3>Trust signal audit</h3><p>Are your best proof points visible before doubt builds?</p></div><div class="feature-card numbered reveal" data-number="4"><h3>Competitive position review</h3><p>Why prospects may pick competitors instead.</p></div><div class="feature-card numbered reveal" data-number="5"><h3>Response path analysis</h3><p>How fast can interested leads reach you?</p></div><div class="feature-card numbered reveal" data-number="6"><h3>Search & discovery audit</h3><p>Where are you losing visibility?</p></div></div></div></section>
+      <section class="section paper"><div class="container split-wide"><div class="reveal"><div class="eyebrow">ROI calculator</div><h2>See how much revenue you may be leaving on the table.</h2><p class="lead">Use your own traffic, conversion, close rate, and customer value to estimate recoverable opportunity.</p><div class="quote-block">See the leaks before you spend another dollar on ads.</div></div><div class="calc-card light reveal"><div class="calc-grid"><div class="field"><label>Monthly visitors</label><input id="roiVisitors" type="number" value="2000"></div><div class="field"><label>Current inquiry rate %</label><input id="roiCurrent" type="number" value="2" step=".1"></div><div class="field"><label>Target inquiry rate %</label><input id="roiTarget" type="number" value="4" step=".1"></div><div class="field"><label>Close rate %</label><input id="roiClose" type="number" value="25" step=".1"></div><div class="field"><label>Average customer value</label><input id="roiValue" type="number" value="1500"></div><div class="calc-result"><b id="roiAnnual">$180,000</b><span>potential annual revenue opportunity</span></div></div></div></div></section>
+      <section class="section dark textured"><div class="container"><div class="section-head center reveal"><div class="eyebrow">Competitor comparison</div><h2>Your prospects compare you before they contact you.</h2></div><div class="matrix reveal"><table><thead><tr><th>Decision Factor</th><th>Your Current Journey</th><th>Strong Competitor Journey</th><th>Leak Risk</th></tr></thead><tbody><tr><td>Offer clarity</td><td class="bad">Unclear above the fold</td><td class="good">Clear in 3 seconds</td><td>High</td></tr><tr><td>Trust proof</td><td class="bad">Buried low</td><td class="good">Visible early</td><td>High</td></tr><tr><td>CTA path</td><td class="bad">Generic contact</td><td class="good">Specific booking action</td><td>Medium</td></tr><tr><td>Follow-up</td><td class="bad">Manual / slow</td><td class="good">Fast / routed</td><td>High</td></tr></tbody></table></div></div></section>
+      <section class="section warm"><div class="container"><div class="section-head reveal"><div class="eyebrow">Results</div><h2>One client recovered 47 qualified leads in the first 30 days after audit fixes.</h2></div><div class="grid grid-3"><div class="result-card reveal"><h3>47 qualified leads recovered</h3><p>After page structure, CTA placement, and follow-up path fixes.</p></div><div class="result-card reveal"><h3>$187,000 opportunity identified</h3><p>Recovered opportunity mapped across lead flow, trust proof, and response delays.</p></div><div class="result-card reveal"><h3>8 conversion leaks found</h3><p>Unclear service messaging, hidden proof, weak mobile flow, and competitor gaps.</p></div></div></div></section>
+      <section class="section paper"><div class="container split"><div class="reveal"><div class="eyebrow">Get the report</div><h2>No sales pitch. Just clear findings and prioritized fixes.</h2><p class="lead">Takes 45 seconds • Full report in 2 business days.</p></div><form id="audit-form" class="form-card mailto-form reveal" data-subject="Get My Free Leak Report"><div class="form-grid"><div class="field"><label>Name</label><input name="Name" required></div><div class="field"><label>Email</label><input name="Email" type="email" required></div><div class="field wide"><label>Website URL</label><input name="Website" type="url" required></div><div class="field wide"><label>Business type</label><input name="Business Type"></div></div><div class="form-actions"><button class="btn btn-primary" type="submit">Get My Free Leak Report →</button><span class="form-note">Limited audit slots per week.</span></div></form></div></section>
+    </section>
+
+    <!-- WEB CREATION -->
+    <section class="page" id="page-web" data-title="Web Creation | Digital Surge Labs">
+      <section class="hero" id="web"><div class="container hero-inner"><div class="hero-copy reveal"><div class="eyebrow">Web creation</div><h1>Stop Sending Paid Traffic to a Website That <span class="highlight">Loses You Money</span></h1><p>Most websites look decent but leak leads. We build conversion-focused websites that improve clarity, trust, and inquiry flow so prospects contact you instead of your competitors.</p><div class="btn-row"><a class="btn btn-primary btn-lg" href="https://calendly.com/usama-fintech/30min" target="_blank">Book Your Website Review →</a><a class="btn btn-secondary" href="mailto:hello@digitalsurgelabs.com?subject=Website%20Review">Email Us</a></div></div><div class="console reveal"><div class="console-shell"><div class="console-top"><div class="console-title"><span class="live-dot"></span> Before / After Preview</div><span class="console-mode">Conversion Build</span></div><div class="console-body"><div class="before-after"><div class="mock-page bad"><h3>Before</h3><div class="mock-bar" style="width:50%"></div><div class="mock-bar" style="width:75%"></div><div class="mock-bar" style="width:42%"></div><p class="muted">Generic message. Hidden proof. Weak CTA.</p></div><div class="mock-page good"><h3>After</h3><div class="mock-bar" style="width:88%"></div><div class="mock-bar" style="width:70%"></div><div class="mock-bar" style="width:96%"></div><p class="muted">Clear offer. Early proof. Strong booking path.</p></div></div></div></div></div></div></section>
+      <section class="section warm"><div class="container"><div class="section-head reveal"><div class="eyebrow">Blueprint</div><h2>Every high-converting website needs conversion elements in the right place.</h2></div><div class="wireframe reveal"><div class="mock-bar" style="width:60%"></div><div class="mock-bar" style="width:90%"></div><div class="mock-bar" style="width:45%"></div><div class="annotation" style="right:24px;top:54px">Strong CTA above the fold</div><div class="annotation" style="left:28px;bottom:92px">Proof before hesitation</div><div class="annotation" style="right:34px;bottom:36px">Booking path repeated at high-intent moments</div><div class="grid grid-3" style="margin-top:40px"><div class="card"><h3>Clear offer</h3><p>Make the business understandable in seconds.</p></div><div class="card"><h3>Trust flow</h3><p>Show reviews, outcomes, and proof before doubt builds.</p></div><div class="card"><h3>Action path</h3><p>Make the next step obvious and low-friction.</p></div></div></div></div></section>
+      <section class="section paper"><div class="container"><div class="section-head center reveal"><div class="eyebrow">What we build</div><h2>Websites built to turn confusion into qualified leads.</h2></div><div class="grid grid-3"><div class="feature-card numbered reveal" data-number="1"><h3>Homepage clarity</h3><p>Does your offer make sense in 3 seconds?</p></div><div class="feature-card numbered reveal" data-number="2"><h3>Service pages that stand apart</h3><p>Why your services matter compared with competitors.</p></div><div class="feature-card numbered reveal" data-number="3"><h3>Lead capture flow</h3><p>Make it easy for interested prospects to say yes.</p></div><div class="feature-card numbered reveal" data-number="4"><h3>Mobile mastery</h3><p>Prospects judge you from their phone.</p></div><div class="feature-card numbered reveal" data-number="5"><h3>Proof placement strategy</h3><p>Build confidence before hesitation.</p></div><div class="feature-card numbered reveal" data-number="6"><h3>Post-launch optimization</h3><p>Improve based on traffic behavior and inquiry flow.</p></div></div></div></section>
+      <section class="section dark textured"><div class="container"><div class="section-head center reveal"><div class="eyebrow">Why this is different</div><h2>Generic web designer vs. Digital Surge Labs</h2></div><div class="comparison-card reveal"><div class="comparison-row"><div><b>Generic Web Designer</b></div><div><b>Digital Surge Labs</b></div></div><div class="comparison-row"><div>Starts with visual preferences.</div><div>Starts with lead journey and buyer hesitation.</div></div><div class="comparison-row"><div>Builds pages that look nice.</div><div>Builds pages that clarify, prove, and convert.</div></div><div class="comparison-row"><div>Launches and leaves.</div><div>Includes post-launch optimization and tracking.</div></div></div></div></section>
+      <section class="section warm"><div class="container"><div class="section-head reveal"><div class="eyebrow">Examples</div><h2>Premium website layouts for trust-based businesses.</h2></div><div class="website-examples"><div class="site-shot reveal"><div class="shot-window"><span class="pill">Clinic</span><h3>Booking-first service site</h3><div class="mock-bar" style="width:90%"></div><div class="mock-bar" style="width:75%"></div></div></div><div class="site-shot reveal"><div class="shot-window"><span class="pill">Law firm</span><h3>Authority-first practice site</h3><div class="mock-bar" style="width:70%"></div><div class="mock-bar" style="width:85%"></div></div></div><div class="site-shot reveal"><div class="shot-window"><span class="pill">Home services</span><h3>Quote-flow conversion site</h3><div class="mock-bar" style="width:86%"></div><div class="mock-bar" style="width:62%"></div></div></div></div></div></section>
+      <section class="section paper"><div class="container split"><div class="reveal"><div class="eyebrow">Request review</div><h2>Want to know if your website is losing leads?</h2><p class="lead">We’ll assess your current website against real conversion blockers and identify the 3–5 highest-impact improvements you can make right now.</p></div><form class="form-card mailto-form reveal" data-subject="Website Review Request"><div class="form-grid"><div class="field"><label>Name</label><input name="Name"></div><div class="field"><label>Email</label><input name="Email" type="email"></div><div class="field wide"><label>Website URL</label><input name="Website"></div><div class="field wide"><label>What should improve?</label><textarea name="Goal"></textarea></div></div><button class="btn btn-primary" type="submit">Request Website Review →</button></form></div></section>
+    </section>
+
+    <!-- GROWTH SYSTEMS -->
+    <section class="page" id="page-growth" data-title="Growth Systems | Digital Surge Labs">
+      <section class="hero" id="growth"><div class="container hero-inner"><div class="hero-copy reveal"><div class="eyebrow">Growth systems</div><h1>Turn Scattered Marketing Into a <span class="highlight">Connected Lead Generation System</span></h1><p>From inconsistent inquiries to predictable pipeline. We connect pages, outreach, follow-up, automation, and tracking around where prospects are actually stuck.</p><div class="btn-row"><a class="btn btn-primary btn-lg" href="https://calendly.com/usama-fintech/30min" target="_blank">Build Your Growth System →</a><a class="btn btn-secondary" href="mailto:hello@digitalsurgelabs.com?subject=Growth%20System%20Review">Email Us</a></div></div><div class="console reveal"><div class="console-shell"><div class="console-top"><div class="console-title"><span class="live-dot"></span> Growth Engine</div><span class="console-mode">Connected</span></div><div class="console-body"><div class="score-row"><span>Traffic</span><span class="bar"><i style="--w:78%"></i></span><b>Live</b></div><div class="score-row"><span>Landing pages</span><span class="bar"><i style="--w:62%"></i></span><b>Fix</b></div><div class="score-row"><span>S.A.R.A</span><span class="bar"><i style="--w:83%"></i></span><b>Route</b></div><div class="score-row"><span>Follow-up</span><span class="bar"><i style="--w:46%"></i></span><b>Leak</b></div><div class="wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div></div></section>
+      <section class="section warm"><div class="container"><div class="section-head reveal"><div class="eyebrow">Growth leaks</div><h2>Most businesses do not have a marketing problem. They have a system problem.</h2></div><div class="grid grid-3"><div class="leak-item critical reveal"><span class="mark">!</span><h3>Traffic without inquiries</h3><p>Attention comes in, but the next step does not convert.</p></div><div class="leak-item critical reveal"><span class="mark">!</span><h3>Slow follow-up</h3><p>Interested prospects cool down before your team responds.</p></div><div class="leak-item reveal"><span class="mark">!</span><h3>Disconnected tools</h3><p>Website, email, outreach, CRM, and automation do not work together.</p></div></div></div></section>
+      <section class="section paper"><div class="container"><div class="section-head center reveal"><div class="eyebrow">Full funnel</div><h2>Website → S.A.R.A → Follow-up → Automation → Tracking</h2></div><div class="funnel reveal"><div class="funnel-node">Website / Landing Page</div><div class="funnel-node">S.A.R.A Response</div><div class="funnel-node">Lead Routing</div><div class="funnel-node">Follow-Up Automation</div><div class="funnel-node">Tracking + Optimization</div></div></div></section>
+      <section class="section dark textured"><div class="container"><div class="section-head center reveal"><div class="eyebrow">What we build</div><h2>Growth systems that connect lead generation, follow-up, and tracking into one engine.</h2></div><div class="grid grid-4"><div class="feature-card dark-card numbered reveal" data-number="1"><h3>Lead generation funnels</h3><p>Targeted outreach that feels specific, not generic.</p></div><div class="feature-card dark-card numbered reveal" data-number="2"><h3>Follow-up workflows</h3><p>Faster response time means more conversions.</p></div><div class="feature-card dark-card numbered reveal" data-number="3"><h3>Automation & AI</h3><p>Let systems handle what does not need human touch.</p></div><div class="feature-card dark-card numbered reveal" data-number="4"><h3>Tracking & reporting</h3><p>Know exactly where prospects convert or get stuck.</p></div></div></div></section>
+      <section class="section paper"><div class="container split"><div class="reveal"><div class="eyebrow">Growth review</div><h2>Stop wasting traffic on a broken conversion journey.</h2><p class="lead">We’ll analyze your lead flow, response speed, and conversion paths — then show you the 3–5 highest-impact improvements you can make right now.</p></div><form class="form-card mailto-form reveal" data-subject="Growth System Review Request"><div class="form-grid"><div class="field"><label>Email</label><input name="Email" type="email"></div><div class="field"><label>Website</label><input name="Website"></div><div class="field wide"><label>What are you trying to improve?</label><textarea name="Goal"></textarea></div></div><button class="btn btn-primary" type="submit">Request Growth Review →</button></form></div></section>
+    </section>
+
+    <!-- SARA -->
+    <section class="page" id="page-sara" data-title="S.A.R.A AI Communication | Digital Surge Labs">
+      <section class="hero" id="sara"><div class="container hero-inner"><div class="hero-copy reveal"><div class="eyebrow">S.A.R.A AI communication</div><h1>Never Miss Another <span class="highlight">Qualified Call</span> Again</h1><p>AI Voice System that answers, qualifies, books, and routes leads 24/7.</p><p>Incoming calls after hours. Prospects booking online but needing verification. Leads going to voicemail. S.A.R.A handles it all, so qualified opportunities do not slip away.</p><div class="btn-row"><a class="btn btn-primary btn-lg" href="https://calendly.com/usama-fintech/30min" target="_blank">Request S.A.R.A Demo →</a><a class="btn btn-secondary" href="mailto:hello@digitalsurgelabs.com?subject=S.A.R.A%20Demo%20Request">Email Us</a></div></div><div class="console reveal"><div class="console-shell"><div class="console-top"><div class="console-title"><span class="live-dot"></span> S.A.R.A Live Console</div><span class="console-mode">Inbound + Outbound</span></div><div class="console-body"><div class="tabs"><button class="tab-btn active" data-tab="sara-inbound">Inbound</button><button class="tab-btn" data-tab="sara-outbound">Outbound</button><button class="tab-btn" data-tab="sara-booking">Booking Support</button></div><div class="tab-panel active" id="sara-inbound"><div class="transcript"><div class="bubble sara"><b>S.A.R.A:</b> Thanks for calling. Are you looking to book an appointment or ask about a service?</div><div class="bubble"><b>Caller:</b> I need pricing and availability for this week.</div><div class="bubble sara"><b>S.A.R.A:</b> I can help. What service are you interested in, and what time window works best?</div></div></div><div class="tab-panel" id="sara-outbound"><div class="transcript"><div class="bubble sara"><b>S.A.R.A:</b> Quick question — are you currently missing calls or slow to follow up with new inquiries?</div><div class="bubble"><b>Prospect:</b> We do miss calls when the team is busy.</div><div class="bubble sara"><b>S.A.R.A:</b> That is exactly the response leak we help identify.</div></div></div><div class="tab-panel" id="sara-booking"><div class="transcript"><div class="bubble sara"><b>S.A.R.A:</b> I found available times Tuesday at 2:00 PM or Wednesday at 10:30 AM. Which works better?</div><div class="bubble"><b>Lead:</b> Wednesday works.</div><div class="bubble sara"><b>S.A.R.A:</b> Great. I’ll confirm details and send this to the team.</div></div></div></div></div></div></div></section>
+      <section class="section warm"><div class="container"><div class="section-head reveal"><div class="eyebrow">What S.A.R.A does</div><h2>Human-like, always available, and built to hand humans the high-value conversations.</h2></div><div class="grid grid-3"><div class="feature-card numbered reveal" data-number="1"><h3>Answer every call</h3><p>Including after-hours, weekends, and when your team is busy.</p></div><div class="feature-card numbered reveal" data-number="2"><h3>Qualify leads instantly</h3><p>Know which prospects are hot before you call them back.</p></div><div class="feature-card numbered reveal" data-number="3"><h3>Support booking paths</h3><p>Confirm appointments and reduce no-shows.</p></div><div class="feature-card numbered reveal" data-number="4"><h3>Capture and log calls</h3><p>Every call gets captured, organized, and routed.</p></div><div class="feature-card numbered reveal" data-number="5"><h3>Scale response</h3><p>Handle 100+ calls without hiring more staff.</p></div><div class="feature-card numbered reveal" data-number="6"><h3>Human handoff</h3><p>Your team only handles the conversations that need judgment.</p></div></div></div></section>
+      <section class="section paper"><div class="container"><div class="section-head reveal"><div class="eyebrow">How it works</div><h2>A prospect calls. S.A.R.A answers immediately.</h2></div><div class="process"><div class="process-step reveal" data-step="1"><h3>S.A.R.A learns their needs</h3><p>Through smart questions, not robotic scripts.</p></div><div class="process-step reveal" data-step="2"><h3>S.A.R.A scores them</h3><p>Hot leads get priority. Unqualified leads get information.</p></div><div class="process-step reveal" data-step="3"><h3>S.A.R.A books or captures info</h3><p>The prospect moves toward a meeting, callback, or routed follow-up.</p></div><div class="process-step reveal" data-step="4"><h3>You get notified</h3><p>Immediately when a hot lead comes in.</p></div><div class="process-step reveal" data-step="5"><h3>Everything is logged</h3><p>In your CRM and follow-up system.</p></div></div></div></section>
+      <section class="section dark textured"><div class="container"><div class="section-head center reveal"><div class="eyebrow">Client feedback</div><h2>What businesses notice when response systems improve.</h2></div><div class="grid grid-3"><div class="testimonial-card dark-card reveal"><span class="quote-mark">“</span><p>We were losing calls to voicemail and did not know what was coming in. S.A.R.A answers everything now. In the first month, we captured 18 additional qualified leads that would have been missed.</p><b>Owner, Home Services Company — California</b></div><div class="testimonial-card dark-card reveal"><span class="quote-mark">“</span><p>It was not just about AI. It was about making sure inquiries moved to the right next step faster.</p><b>Clinic Director, Aesthetic Clinic — Florida</b></div><div class="testimonial-card dark-card reveal"><span class="quote-mark">“</span><p>The biggest benefit was consistency. We could see what was too manual and where prospects were delayed.</p><b>Managing Partner — New York</b></div></div></div></section>
+      <section class="section warm"><div class="container split"><div class="reveal"><div class="eyebrow">Demo request</div><h2>Tell us about your communication gaps.</h2><p class="lead">We’ll review your current setup and show exactly how S.A.R.A would handle your calls, qualify your leads, and reduce missed opportunities.</p></div><form class="form-card mailto-form reveal" data-subject="Request S.A.R.A Demo"><div class="form-grid"><div class="field"><label>Email</label><input name="Email" type="email"></div><div class="field"><label>Website</label><input name="Website"></div><div class="field wide"><label>What communication problem are you trying to fix?</label><textarea name="Communication Problem"></textarea></div></div><button class="btn btn-primary" type="submit">Request S.A.R.A Demo →</button></form></div></section>
+    </section>
+
+    <!-- COMMERCE -->
+    <section class="page" id="page-commerce" data-title="Digital Commerce | Digital Surge Labs">
+      <section class="hero" id="commerce"><div class="container hero-inner"><div class="hero-copy reveal"><div class="eyebrow">Digital Commerce</div><h1>Your E-commerce Store Is Leaving Money on the Table. <span class="highlight">We Find and Fix the Leaks.</span></h1><p>Your store gets traffic but low conversion. Customers add products to carts then abandon them. Orders happen, but customers rarely come back. We fix the leaks that cost you revenue.</p><p>For Shopify, WooCommerce, subscription, local retail, and product-led businesses.</p><div class="btn-row"><a class="btn btn-primary btn-lg" href="https://calendly.com/usama-fintech/30min" target="_blank">Request Commerce Review →</a><a class="btn btn-secondary" href="mailto:hello@digitalsurgelabs.com?subject=Commerce%20Review">Email Us</a></div></div><div class="console reveal"><div class="console-shell"><div class="console-top"><div class="console-title"><span class="live-dot"></span> Commerce Leak Map</div><span class="console-mode">Revenue Recovery</span></div><div class="console-body journey-lane"><div class="journey-step"><b>Product View</b><span class="bar"><i style="--w:92%"></i></span><span>1,800</span></div><div class="journey-step"><b>Add to Cart</b><span class="bar"><i style="--w:44%"></i></span><span class="dropoff">Leak</span></div><div class="journey-step"><b>Checkout</b><span class="bar"><i style="--w:28%"></i></span><span class="dropoff">Drop-off</span></div><div class="journey-step"><b>Recovered</b><span class="bar"><i style="--w:64%"></i></span><span>+200 orders</span></div><div class="recovery-flow">Recovery flow: product proof + checkout clarity + cart sequence</div></div></div></div></div></section>
+      <section class="section warm"><div class="container"><div class="section-head reveal"><div class="eyebrow">What we build</div><h2>E-commerce systems that reduce cart abandonment and increase order value.</h2></div><div class="grid grid-3"><div class="feature-card numbered reveal" data-number="1"><h3>Product pages that answer hesitation</h3><p>Quality, fit, delivery, returns — before customers ask.</p></div><div class="feature-card numbered reveal" data-number="2"><h3>Checkout flow that does not abandon</h3><p>Reduce steps, clarify costs, and build trust at the critical moment.</p></div><div class="feature-card numbered reveal" data-number="3"><h3>Cart recovery workflows</h3><p>Bring back abandoned carts with smart follow-up.</p></div><div class="feature-card numbered reveal" data-number="4"><h3>Retention systems</h3><p>Turn one-time buyers into repeat customers.</p></div><div class="feature-card numbered reveal" data-number="5"><h3>Full journey tracking</h3><p>Know exactly where customers drop off and fix it.</p></div><div class="feature-card numbered reveal" data-number="6"><h3>Order value growth</h3><p>Bundle, upsell, and cross-sell without adding friction.</p></div></div></div></section>
+      <section class="section dark textured"><div class="container"><div class="section-head center reveal"><div class="eyebrow">Where revenue leaks</div><h2>Every abandoned cart is money walking away.</h2></div><div class="tabs"><button class="tab-btn active" data-tab="leak-product">Product confidence</button><button class="tab-btn" data-tab="leak-checkout">Checkout</button><button class="tab-btn" data-tab="leak-cart">Cart recovery</button><button class="tab-btn" data-tab="leak-blind">Blind spot</button></div><div id="leak-product" class="tab-panel active"><div class="result-card dark-card"><h3>Product pages leak confidence</h3><p>Unanswered questions about quality, fit, and returns kill sales at the decision point.</p></div></div><div id="leak-checkout" class="tab-panel"><div class="result-card dark-card"><h3>Checkout abandonment</h3><p>Hidden costs, unclear shipping, or weak trust signals make customers leave when they are closest to buying.</p></div></div><div id="leak-cart" class="tab-panel"><div class="result-card dark-card"><h3>Abandoned cart leak</h3><p>Without smart recovery sequences, warm buying intent disappears.</p></div></div><div id="leak-blind" class="tab-panel"><div class="result-card dark-card"><h3>Blind spot</h3><p>You do not know where revenue is actually leaking: discovery, trust, checkout, recovery, or retention.</p></div></div></div></section>
+      <section class="section warm"><div class="container"><div class="section-head reveal"><div class="eyebrow">Results</div><h2>Commerce friction gets expensive fast.</h2></div><div class="grid grid-3"><div class="result-card reveal"><h3>Cart abandonment reduced from 72% to 48%</h3><p>Checkout trust and recovery flow improvements.</p></div><div class="result-card reveal"><h3>+200 annual orders recovered</h3><p>Recovered from abandoned cart and follow-up sequences.</p></div><div class="result-card reveal"><h3>Repeat purchase path improved</h3><p>Post-purchase and win-back flows strengthened.</p></div></div></div></section>
+      <section class="section paper"><div class="container split"><div class="reveal"><div class="eyebrow">Commerce review</div><h2>Stop losing 60–70% of cart-abandoning customers.</h2><p class="lead">We’ll analyze your entire customer journey and show exactly where revenue is leaking and how much money you may be leaving on the table.</p></div><form class="form-card mailto-form reveal" data-subject="Commerce Review Request"><div class="form-grid"><div class="field"><label>Email</label><input name="Email" type="email"></div><div class="field"><label>Store URL</label><input name="Website"></div><div class="field wide"><label>What are you trying to improve?</label><textarea name="Goal"></textarea></div></div><button class="btn btn-primary" type="submit">Request Commerce Review →</button></form></div></section>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="page" id="page-contact" data-title="Contact Digital Surge Labs">
+      <section class="hero" id="contact"><div class="container hero-inner"><div class="hero-copy reveal"><div class="eyebrow">Contact Digital Surge Labs</div><h1>Ready to Stop Losing Leads to <span class="highlight">Digital Gaps?</span></h1><p>Book a discovery call or send your website. We’ll review your digital presence and show you exactly what is holding you back from more leads, sales, and growth.</p><div class="btn-row"><a class="btn btn-primary btn-lg" href="https://calendly.com/usama-fintech/30min" target="_blank">Schedule Free Strategy Call →</a><a class="btn btn-secondary" href="mailto:hello@digitalsurgelabs.com?subject=Digital%20Growth%20Review">Email Us</a></div><div class="guarantee-row"><span class="badge">Free initial consultation</span><span class="badge">24-hour response</span><span class="badge">US businesses nationwide</span></div></div><div class="console reveal"><div class="console-shell"><div class="console-top"><div class="console-title"><span class="live-dot"></span> Growth Review Snapshot</div><span class="console-mode">Ready</span></div><div class="console-body"><div class="mini-grid"><div class="mini-stat"><small>Response time</small><b>24h</b></div><div class="mini-stat"><small>Review time</small><b>45s</b></div><div class="mini-stat"><small>Best next step</small><b>Audit</b></div><div class="mini-stat"><small>Location</small><b>US</b></div></div></div></div></div></div></section>
+      <section class="section warm"><div class="container"><div class="section-head center reveal"><div class="eyebrow">How to get started</div><h2>Choose the easiest way to start.</h2></div><div class="tabs light-tabs"><button class="tab-btn active" data-tab="start-call">Book a Meeting</button><button class="tab-btn" data-tab="start-review">Send Your Website</button><button class="tab-btn" data-tab="start-email">Email Direct</button></div><div id="start-call" class="tab-panel active"><div class="card"><h3>Book a 30-Minute Strategy Call</h3><p>Talk directly with the Digital Surge Labs team. We’ll ask about your current situation, review your biggest challenges, and outline the best next step for your business.</p><a class="btn btn-primary" href="https://calendly.com/usama-fintech/30min" target="_blank">Book Free Strategy Call →</a></div></div><div id="start-review" class="tab-panel"><div class="card"><h3>Request a Free Digital Review</h3><p>Send your website URL and tell us what you want to improve. We’ll analyze your digital presence and send a detailed assessment within 24 hours.</p></div></div><div id="start-email" class="tab-panel"><div class="card"><h3>Email Direct</h3><p>Send us your question or inquiry directly. We’ll get back to you within 24 hours with next steps.</p><a class="btn btn-primary" href="mailto:hello@digitalsurgelabs.com">Email Us →</a></div></div></div></section>
+      <section class="section dark textured"><div class="container split"><div class="reveal"><div class="eyebrow">Request review</div><h2>Send your website and details.</h2><p class="lead">We’ll review your digital presence and get back to you within 24 hours with the strongest next steps.</p></div><form class="form-card mailto-form reveal" data-subject="Digital Growth Review Request"><div class="form-grid"><div class="field"><label>Name</label><input name="Name"></div><div class="field"><label>Email</label><input name="Email" type="email"></div><div class="field wide"><label>Website URL</label><input name="Website"></div><div class="field wide"><label>What do you want help with?</label><select name="Service"><option>Digital Leak Audit</option><option>Web Creation</option><option>Growth Systems</option><option>S.A.R.A</option><option>Digital Commerce</option><option>Not sure yet</option></select></div><div class="field wide"><label>Message</label><textarea name="Message"></textarea></div></div><button class="btn btn-primary" type="submit">Request Review →</button></form></div></section>
+      <section class="section warm"><div class="container"><div class="section-head center reveal"><div class="eyebrow">Trust signals</div><h2>Built for US-based businesses that want clarity before committing.</h2></div><div class="grid grid-4"><div class="metric-card reveal"><b>24h</b><span>Response commitment</span></div><div class="metric-card reveal"><b>2 days</b><span>Audit delivery option</span></div><div class="metric-card reveal"><b>US</b><span>Serving nationwide</span></div><div class="metric-card reveal"><b>No pressure</b><span>Honest fit check</span></div></div></div></section>
+      <section class="section paper"><div class="container"><div class="section-head reveal"><div class="eyebrow">Questions</div><h2>Common questions before contacting us.</h2></div><div class="faq"><details><summary>Is the strategy call free?</summary><p>Yes. The first strategy call is complimentary. We use it to understand your situation and recommend the best starting point.</p></details><details><summary>What happens after we book or send our website?</summary><p>We review your information and come prepared to discuss the biggest opportunities. If there is a fit, we recommend the best starting point — Digital Leak Audit, website rebuild, Growth System, S.A.R.A setup, or commerce improvement.</p></details><details><summary>Do you only work with San Francisco businesses?</summary><p>No. Digital Surge Labs is based in San Francisco, California, and serves US-based businesses nationwide.</p></details></div></div></section>
+      <section class="section dark textured"><div class="container split"><div class="reveal"><div class="eyebrow">Final step</div><h2>Stop losing leads to digital gaps. Schedule your free strategy call today.</h2><p class="lead">Book a 30-minute call or send your website for a free digital review. Either way, we’ll show you what is holding you back from more growth.</p></div><div class="btn-row reveal"><a class="btn btn-primary btn-lg" href="https://calendly.com/usama-fintech/30min" target="_blank">Schedule Free Strategy Call →</a><a class="btn btn-secondary" href="mailto:hello@digitalsurgelabs.com">Email Digital Surge Labs</a></div></div></section>
+    </section>
+  </main>
+
+  <footer class="footer section-tight">
+    <div class="container">
+      <div class="footer-grid">
+        <div><a href="#home" data-route="home" class="logo-card"><img src="data:image/webp;base64,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" alt="Digital Surge Labs logo"></a><p>Digital Surge Labs helps US-based businesses find and fix the digital gaps costing them leads, sales, and growth opportunities.</p></div>
+        <div><h3>Pages</h3><a href="#home" data-route="home">Home</a><br><a href="#audit" data-route="audit">Digital Leak Audit</a><br><a href="#web" data-route="web">Web Creation</a><br><a href="#growth" data-route="growth">Growth Systems</a><br><a href="#sara" data-route="sara">S.A.R.A</a><br><a href="#commerce" data-route="commerce">Digital Commerce</a><br><a href="#contact" data-route="contact">Contact</a></div>
+        <div><h3>Contact</h3><p>Email: <a href="mailto:hello@digitalsurgelabs.com">hello@digitalsurgelabs.com</a><br>Location: San Francisco, California<br>Serving: US-based businesses nationwide</p><a class="btn btn-primary" href="https://calendly.com/usama-fintech/30min" target="_blank">Book Your Leak Audit →</a></div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Digital Surge Labs. All rights reserved.</span><span>2 Business Day Delivery • US-Based • No-Obligation Audit</span></div>
+    </div>
+  </footer>
+
+  <div class="checklist-modal" id="checklistModal" role="dialog" aria-modal="true" aria-label="Free Leak Checklist">
+    <div class="popup-card">
+      <button class="popup-close" id="popupClose" aria-label="Close popup">×</button>
+      <div class="eyebrow">Free checklist</div>
+      <h2>Before you spend more on ads, check the leaks first.</h2>
+      <p class="lead">Request the Free Leak Checklist PDF and get a simple framework for spotting clarity, trust, CTA, competitor, and follow-up gaps.</p>
+      <form class="mailto-form" data-subject="Free Leak Checklist PDF Request" style="margin-top:24px"><div class="form-grid"><div class="field"><label>Email</label><input name="Email" type="email" required></div><div class="field"><label>Website URL</label><input name="Website"></div></div><button class="btn btn-primary" type="submit">Send Me the Checklist →</button></form>
+    </div>
+  </div>
+
+  <script>
+    const routes = ['home','audit','web','growth','sara','commerce','contact'];
+    const calendly = 'https://calendly.com/usama-fintech/30min';
+    function showPage(route, scrollTop=true){
+      if(!routes.includes(route)) route='home';
+      document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+      document.getElementById('page-'+route).classList.add('active');
+      document.querySelectorAll('[data-route]').forEach(a=>a.classList.toggle('active', a.dataset.route===route));
+      const title = document.getElementById('page-'+route).dataset.title || 'Digital Surge Labs';
+      document.title = title;
+      if(scrollTop) window.scrollTo({top:0,behavior:'smooth'});
+      history.replaceState(null,'','#'+route);
+      document.getElementById('mobilePanel').classList.remove('open');
+      document.body.classList.remove('menu-open');
+      triggerVisibleReveals();
+    }
+    document.querySelectorAll('[data-route]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPage(a.dataset.route)}));
+    document.querySelector('.menu-toggle').addEventListener('click',()=>{document.getElementById('mobilePanel').classList.toggle('open');document.body.classList.toggle('menu-open')});
+    window.addEventListener('load',()=>{const h=location.hash.replace('#','');showPage(routes.includes(h)?h:'home',false);});
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function fmtUSD(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(Math.max(0,Number(n)||0));}
+    function updateHomeCalc(){const leads=+homeLeads.value||0,value=+homeValue.value||0,leak=(+homeLeak.value||0)/100;homeLeakValue.textContent=fmtUSD(leads*value*leak)}
+    ['homeLeads','homeValue','homeLeak'].forEach(id=>document.getElementById(id)?.addEventListener('input',updateHomeCalc)); updateHomeCalc();
+    function updateRoi(){const visitors=+roiVisitors.value||0,cur=(+roiCurrent.value||0)/100,tgt=(+roiTarget.value||0)/100,close=(+roiClose.value||0)/100,val=+roiValue.value||0;const add=Math.max(0,(visitors*tgt-visitors*cur)*close*val*12);roiAnnual.textContent=fmtUSD(add)}
+    ['roiVisitors','roiCurrent','roiTarget','roiClose','roiValue'].forEach(id=>document.getElementById(id)?.addEventListener('input',updateRoi)); updateRoi();
+
+    document.querySelectorAll('.tab-btn').forEach(btn=>btn.addEventListener('click',()=>{const id=btn.dataset.tab;const scope=btn.closest('section')||document;scope.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));scope.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(id)?.classList.add('active')}));
+    document.querySelectorAll('.audit-bar').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.audit-bar').forEach(b=>b.classList.remove('active'));btn.classList.add('active');auditFinding.textContent=btn.dataset.finding;}));
+    document.querySelectorAll('.mailto-form').forEach(form=>form.addEventListener('submit',e=>{e.preventDefault();const subject=form.dataset.subject||'Digital Surge Labs Inquiry';const data=[...new FormData(form).entries()].filter(([k,v])=>String(v).trim()).map(([k,v])=>`${k}: ${v}`).join('\n');const body=`Hi Digital Surge Labs,\n\n${data}\n\nPlease send the next steps.\n\nSource page: ${document.title}`;window.location.href=`mailto:hello@digitalsurgelabs.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;}));
+    const io = new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting) entry.target.classList.add('visible')})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    function triggerVisibleReveals(){document.querySelectorAll('.page.active .reveal').forEach(el=>{const r=el.getBoundingClientRect(); if(r.top<window.innerHeight && r.bottom>0) el.classList.add('visible')})}
+    const modal=document.getElementById('checklistModal'); const close=document.getElementById('popupClose');
+    close.addEventListener('click',()=>{modal.classList.remove('open');document.body.classList.remove('popup-open');localStorage.setItem('dslPopupClosed','1')});
+    document.addEventListener('mouseleave',e=>{if(e.clientY<8 && !localStorage.getItem('dslPopupClosed') && !modal.classList.contains('open')){modal.classList.add('open');document.body.classList.add('popup-open')}});
+  </script>
+</body>
+</html>
